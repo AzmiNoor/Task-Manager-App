@@ -1,4 +1,12 @@
 # Task Manager App
+### light Mode
+![light Mode](imageslightdesktop.png)
+
+### Dark Mode
+![Dark Mode](images/darkdesktop.png)
+
+## Mobile View 
+![Mobile View](images/mobileview.png)
 
 A feature-rich task management application built with HTML, CSS, and JavaScript to help users organize, track, and manage their daily tasks efficiently.
 
@@ -35,7 +43,6 @@ A feature-rich task management application built with HTML, CSS, and JavaScript 
 ## Future Improvements
 
 * Task categories
-* Search and filtering
 * Drag-and-drop task ordering
 * User authentication
 * Cloud database integration
