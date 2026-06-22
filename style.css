@@ -1,0 +1,625 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+:root {
+    --bg-color: #F2EFFC;
+    --card-color: #ffffff;
+    --text-color: #232B38;
+    --border-color: #d2d4db;
+    --secondary-text-color: rgb(91, 101, 116, 1);
+    /* ---------------------- */
+    --section-bgcolor: #FAFAFC;
+    --taskcounter-bgcolor: #E2DEFB;
+    --addtask-bgcolor: #5636E2;
+    --modebutton-color: #d6d8df;
+    --modechanger-color: #4E5367;
+    --modechanger-bgcolor: #f4f4f4;
+    --check-state-color: rgb(4, 138, 32);
+    --check-state-bgcolor: #E7F4EA;
+    --overdue-state-color: #ec4f61;
+    --actiontext-color: #3b3e45;
+    --hover-bgcolor: #F4F2FD;
+    --border: #b4b5b7;
+    --cancel-bgcolor: #e5e7eb;
+    --input-bgcolor: #ffffff;
+    --today-color: #4a68ae;
+    --today-bgcolor: #e9effa;
+    --overdue-color: #ec4f61;
+    --overdue-bgcolor: #FDE1E3;
+    --overdue-state-bgcolor: #FFF6F7;
+    --overdue-bordercolor: #d2d4db;
+
+}
+
+.darkmode {
+    --bg-color: #0B0F15;
+    --card-color: #0C1117;
+    --text-color: #FFFFFF;
+    --border-color: #181D24;
+    --secondary-text-color: #9CA3AF;
+
+    /* ---------------------- */
+    --section-bgcolor: #0A0E14;
+    --taskcounter-bgcolor: #171B22;
+    --addtask-bgcolor: #6D4AFF;
+    --modebutton-color: #6D4AFF;
+    --modechanger-color: #FFFFFF;
+    --modechanger-bgcolor: #121a26;
+    --check-state-color: #22C55E;
+    --check-state-bgcolor: #123524;
+    --overdue-state-color: #EF4444;
+    --actiontext-color: #D1D5DB;
+    --hover-bgcolor: #1A2235;
+    --border: #24304A;
+    --cancel-bgcolor: #374151;
+    --input-bgcolor: #0B0F15;
+    --overdue-color: #F35D6D;
+    --overdue-bgcolor: #39171f;
+    --today-color: #5EB8FD;
+    --today-bgcolor: #0d1f32;
+    --overdue-state-bgcolor: #181218;
+    --overdue-bordercolor: #361920;
+}
+
+input body {
+    background-color: var(--bg-color);
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+#todo {
+    display: flex;
+}
+
+.todoSidebar {
+    display: flex;
+    flex-direction: column;
+    width: 23%;
+    background-color: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    margin: .3rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.taskstatus {
+    border-top: 1px solid var(--border-color);
+    margin: 1rem;
+    padding: .5rem;
+}
+
+.devtodo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0 .3rem;
+}
+
+.devtodo div p {
+    color: var(--text-color);
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 2rem;
+}
+
+.devtodo div span {
+    color: var(--secondary-text-color);
+    font-size: .9rem;
+}
+
+.task {
+    display: grid;
+    grid-template-columns: 11% 73% 10%;
+    padding: .8rem;
+    align-items: center;
+    gap: .4rem;
+    border-radius: 1rem;
+}
+
+.task p {
+    font-size: 1rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.taskcounter {
+    background-color: var(--taskcounter-bgcolor);
+    color: var(--text-color);
+    text-align: center;
+    width: 1.8rem;
+    padding: .4rem;
+    border-radius: 50%;
+    font-size: .9rem;
+}
+
+#todoContainer {
+    width: 75%;
+    background-color: var(--card-color);
+    border-radius: 1rem;
+    border: 1px solid var(--border-color);
+    margin: .3rem;
+}
+
+.todotype {
+    display: flex;
+    gap: 1rem;
+    margin: 1.7rem;
+}
+
+.todotype div p {
+    color: var(--text-color);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.iconbox {
+    background-color: var(--bg-color);
+    width: 2.5em;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.todotype div span {
+    color: var(--secondary-text-color);
+    font-size: 0.8rem;
+}
+
+
+.todotype p {
+    font-size: 2rem;
+}
+
+#addtaskSection {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem;
+    border-radius: .3rem;
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    background-color: var(--section-bgcolor);
+
+}
+
+
+#todoInput {
+    flex: 1;
+    padding: .5rem;
+    border: 1px solid var(--border-color);
+    border-radius: .3rem;
+    background-color: var(--input-bgcolor);
+}
+
+#todotimePicker {
+    border: 1px solid var(--border-color);
+    border-radius: .3rem;
+    padding: .5rem;
+    color: var(--text-color);
+    background-color: var(--input-bgcolor);
+}
+
+#addtaskButton {
+    border: none;
+    padding: .7rem;
+    border-radius: .3rem;
+    background-color: var(--addtask-bgcolor);
+    color: white;
+}
+
+#taskSection {
+    color: var(--text-color);
+    overflow: scroll;
+}
+
+.task:hover {
+    background-color: var(--hover-bgcolor);
+}
+
+.userTask {
+    margin: 1rem;
+    border-radius: .3rem;
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 45% 20% 15% 15%;
+    align-items: center;
+    gap: .5rem;
+    font-size: small;
+}
+
+.taskdate {
+    color: var(--secondary-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background-color: var(--check-state-color);
+    border-color: var(--border);
+}
+
+.checkbox:checked {
+    accent-color: var(--check-state-color);
+}
+
+.editbutton {
+    background: none;
+    border: none;
+}
+
+.restorebutton {
+    background: none;
+    border: none;
+}
+
+.usertaskspan {
+    overflow-wrap: anywhere;
+
+}
+
+.overdue {
+    color: var(--overdue-state-color);
+    font-weight: 600;
+    text-decoration: line-through;
+}
+
+.state {
+    padding: .3rem;
+    border-radius: .1rem;
+    text-align: center;
+    min-width: 90px;
+    border-radius: .3rem;
+}
+
+.overduestate {
+    visibility: visible;
+    background-color: var(--overdue-bgcolor);
+    color: var(--overdue-color);
+    font-weight: 600;
+}
+
+.todaystate {
+    background-color: var(--today-bgcolor);
+    color: var(--today-color);
+    font-weight: 600;
+}
+
+.overduebg {
+    background-color: var(--overdue-state-bgcolor);
+    border: 1px solid var(--overdue-bordercolor);
+}
+
+.checkedstate {
+    background-color: var(--check-state-bgcolor);
+    color: var(--check-state-color);
+}
+
+.deletebutton {
+    background: none;
+    border: none;
+}
+
+.buttoncontainer {
+    display: flex;
+    justify-content: flex-end;
+    gap: .5rem;
+}
+
+.checkboxcontainer {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.todotimePicker {
+    margin: auto;
+}
+
+.completed {
+    color: var(--check-state-color);
+    text-decoration: line-through;
+}
+
+.quickactions {
+    margin: .6rem;
+}
+
+.actiontext {
+    border-top: 1px solid var(--border);
+    color: var(--actiontext-color);
+    padding: 1.3rem;
+}
+
+.trash {
+    display: flex;
+    align-items: center;
+    color: var(--actiontext-color);
+    gap: .6rem;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.trash:hover {
+    background-color: var(--hover-bgcolor);
+}
+
+.popupoverlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+.popupbox {
+    color: var(--text-color);
+    width: 350px;
+    background: var(--card-color);
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.popupbox p {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.popupbutton {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.confirmbtn,
+.cancelbtn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.confirmbtn {
+    background: var(--addtask-bgcolor);
+    color: white;
+}
+
+.cancelbtn {
+    background: var(--cancel-bgcolor);
+    color: var(--text-color);
+}
+
+.taskpopup {
+    margin: auto;
+}
+
+#todosearchbar {
+    margin: .6rem;
+    padding: .6rem;
+    border: 1px solid var(--border-color);
+    border-radius: .2rem;
+    width: 97%;
+    background-color: var(--input-bgcolor);
+
+}
+
+.searchsection {
+    border-radius: .2rem;
+    background-color: var(--section-bgcolor);
+    border: 1px solid var(--border-color);
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: row;
+}
+
+input::placeholder {
+    color: var(--secondary-text-color);
+}
+
+input {
+    color: var(--text-color);
+}
+
+.modechanger {
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    justify-content: space-around;
+    color: var(--modechanger-color);
+    border: 1px solid var(--border-color);
+    margin: .6rem;
+    border-radius: .7rem;
+    padding: .3rem;
+    background-color: var(--input-bgcolor);
+}
+
+.modebuttoncontainer {
+    width: 3.6rem;
+    height: 2rem;
+    border-radius: 1rem;
+    background-color: var(--modebutton-color);
+    display: flex;
+    align-items: center;
+
+}
+
+.modebutton {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: var(--card-color);
+    margin: .3rem;
+}
+
+.modebuttontranslate {
+    transform: translateX(90%);
+    transition: transform .4s ease;
+}
+
+.progresstracker {
+    font-size: .9rem;
+    display: grid;
+    gap: .7rem;
+    margin: 1rem;
+    padding: .8rem;
+    border-radius: .7rem;
+    background-color: var(--modechanger-bgcolor);
+    border: 1px solid var(--border-color);
+}
+
+.trackerheading {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.taskcompleteion {
+    color: var(--secondary-text-color);
+}
+
+.progressbardisplay {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .5rem;
+}
+
+.progressbar {
+    height: .6rem;
+    width: 80%;
+    background-color: #E7E9EE;
+    border-radius: 4rem;
+}
+
+.progressfill {
+    height: .6rem;
+    width: 0%;
+    height: 100%;
+    background-color: #26A149;
+    border-radius: 4rem;
+    transition: width .3s ease;
+}
+
+.progresspercentage {
+    width: 20%;
+    text-align: center;
+    color: var(--secondary-text-color);
+}
+
+.emptytask {
+    text-align: center;
+    margin: 1rem;
+    color: var(--secondary-text-color);
+}
+
+.hidden {
+    display: none !important;
+}
+
+@media (max-width:768px) {
+    .todoSidebar {
+        display: block;
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 80%;
+        height: 100vh;
+        z-index: 1000;
+        transition: left .3s ease;
+    }
+
+    #todo {
+        display: block;
+    }
+
+    #addtaskSection {
+        display: grid;
+        /* width: 92%; */
+        gap: .8rem;
+        grid-template-columns: 1fr;
+    }
+
+    #todoContainer {
+        width: 100vw;
+    }
+
+    #todotimePicker {
+        width: 100%;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+    .userTask {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "task task task"
+            "date state actions";
+        gap: 10px;
+    }
+
+    .showsidebar {
+        left: 0;
+    }
+
+    .checkboxcontainer {
+        grid-area: task;
+    }
+
+    .taskdate {
+        grid-area: date;
+        justify-content: flex-start;
+    }
+
+    .state {
+        grid-area: state;
+    }
+
+    .buttoncontainer {
+        grid-area: actions;
+    }
+
+    .overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, .1);
+        display: none;
+        z-index: 999;
+    }
+
+    .showOverlay {
+        display: block;
+    }
+}
