@@ -1,6 +1,6 @@
 # Task Manager App
 ### light Mode
-![light Mode](imageslightdesktop.png)
+![light Mode](images/lightdesktop.png)
 
 ### Dark Mode
 ![Dark Mode](images/darkdesktop.png)
